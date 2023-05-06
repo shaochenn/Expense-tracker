@@ -16,30 +16,28 @@
       </div>
 
     </div>
-    <div class="col col-lg-2 mt-5">
-    </div>
   </div>
 
   <div class="row justify-content-md-center mt-2">
     <div col>
-      總金額:<span>{{totalAmount}}</span>
+      總金額:<span class="fs-1 text-warning">{{totalAmount}}</span>
     </div>
   </div>
 
   {{#each records}}
+  
   <div class="row d-flex justify-content-center align-items-center mt-5">
-
-    <div class="col">
+    <div class="col col-1">
       <i class="{{getImg this.categoryId}}"></i>
     </div>
 
-    <div class="col-2">
-      <div class="row">{{ this.name }}</div>
+    <div class="col col-1">
+      <div class="row fw-bold">{{ this.name }}</div>
       <div class="row">{{ fomattedDate this.date }}</div>
     </div>
-    <div class="col">{{ this.amount }}</div>
-    <div class="col-1"><a href="./records/{{ this._id }}/edit">修改</a></div>
-    <div class="col-1">
+    <div class="col col-1">{{ this.amount }}元</div>
+    <div class="col col-1"><a href="./records/{{ this._id }}/edit">修改</a></div>
+    <div class="col col-1">
       <form action="./records/{{ this._id }}?_method=DELETE" method="POST">
         <button type="submit">刪除</button>
       </form>
@@ -51,7 +49,7 @@
   <div class="row justify-content-md-center mt-5">
   
     <div class="col">
-      <a href="./records/new" class="btn btn-primary">新增支出</a>
+      <a href="./records/new" class="btn btn-primary mb-5">新增支出</a>
     </div>
   </div>
 

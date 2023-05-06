@@ -4,22 +4,22 @@
       *必填欄位
     </div>
     <div class="col-2 mb-4">
-      <h5>請修改你的支出</h5>
+      <h5 class="fw-bold">請修改你的支出</h5>
     </div>
   </div>
   <form action="/records/{{ record._id }}?_method=PUT" method="POST">
     <div class="row justify-content-center mb-3">
-      <lable for="name" class="col-1">名稱*:</lable>
+      <lable for="name" class="col-1 fw-bold">名稱*:</lable>
       <div class="col-2"><input type="text" id="name" name="name" class="form-control" value="{{record.name}}"></div>
     </div>
 
     <div class="row justify-content-center mb-3">
-      <lable for="date" class="col-1">日期*:</lable>
-      <div class="col-2"><input type="date" id="date" name="date" class="form-control" value="{{record.date}}"></div>
+      <lable for="date" class="col-1 fw-bold">日期*:</lable>
+      <div class="col-2"><input type="date" id="date" name="date" class="form-control" value="{{cutDate record.date}}"></div>
     </div>
 
     <div class="row justify-content-center mb-3">
-      <lable for="categoryId" class="col-1">類別*:</lable>
+      <lable for="categoryId" class="col-1 fw-bold">類別*:</lable>
       <div class="col-2"><select name="categoryId" id="categoryId" class="form-control">
           <option value="1" {{#if (eq record.categoryId 1)}}selected{{/if}}>家居物業</option>
           <option value="2" {{#if (eq record.categoryId 2)}}selected{{/if}}>交通出行</option>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="row justify-content-center mb-3">
-      <lable for="amount" class="col-1">金額*:</lable>
+      <lable for="amount" class="col-1 fw-bold">金額*:</lable>
       <div class="col-2"><input type="text" id="amount" name="amount" class="form-control" value="{{record.amount}}"></div>
     </div>
 

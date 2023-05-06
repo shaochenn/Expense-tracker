@@ -50,6 +50,10 @@ app.engine('hbs', exphbs({
         return CATEGORY.其他
       }
     },
+    cutDate: function(date) {
+      if (!date) return ""
+      return date.toISOString().substring(0, 10)
+    },
     eq: (a, b) => a === b
   }
 }))
