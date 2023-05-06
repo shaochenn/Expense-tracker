@@ -7,25 +7,31 @@
       <h5>請修改你的支出</h5>
     </div>
   </div>
-  <form action="/records" method="POST">
+  <form action="/records/{{ record._id }}?_method=PUT" method="POST">
     <div class="row justify-content-center mb-3">
       <lable for="name" class="col-1">名稱*:</lable>
-      <div class="col-2"><input type="text" id="name" name="name" class="form-control"></div>
+      <div class="col-2"><input type="text" id="name" name="name" class="form-control" value="{{record.name}}"></div>
     </div>
 
     <div class="row justify-content-center mb-3">
       <lable for="date" class="col-1">日期*:</lable>
-      <div class="col-2"><input type="date" id="date" name="date" class="form-control"></div>
+      <div class="col-2"><input type="date" id="date" name="date" class="form-control" value="{{record.date}}"></div>
     </div>
 
     <div class="row justify-content-center mb-3">
       <lable for="categoryId" class="col-1">類別*:</lable>
-      <div class="col-2"><input type="text" id="categoryId" name="categoryId" class="form-control"></div>
+      <div class="col-2"><select name="categoryId" id="categoryId" class="form-control">
+          <option value="1" {{#if (eq record.categoryId 1)}}selected{{/if}}>家居物業</option>
+          <option value="2" {{#if (eq record.categoryId 2)}}selected{{/if}}>交通出行</option>
+          <option value="3" {{#if (eq record.categoryId 3)}}selected{{/if}}>休閒娛樂</option>
+          <option value="4" {{#if (eq record.categoryId 4)}}selected{{/if}}>餐飲食品</option>
+          <option value="5" {{#if (eq record.categoryId 5)}}selected{{/if}}>其他</option>
+        </select></div>
     </div>
 
     <div class="row justify-content-center mb-3">
       <lable for="amount" class="col-1">金額*:</lable>
-      <div class="col-2"><input type="text" id="amount" name="amount" class="form-control"></div>
+      <div class="col-2"><input type="text" id="amount" name="amount" class="form-control" value="{{record.amount}}"></div>
     </div>
 
     <div class="row">
