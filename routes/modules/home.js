@@ -4,9 +4,10 @@ const router = express.Router()
 const Record = require('../../models/record')
 
 router.get('/', (req, res) => {
+  const userId = req.user._id
   let totalAmount = 0
 
-  Record.find()
+  Record.find({ userId })
     .lean()
     .then(records => {
       records.forEach(record => totalAmount = totalAmount + record.amount)
