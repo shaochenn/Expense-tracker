@@ -21,11 +21,11 @@
     <div class="row justify-content-center mb-3">
       <lable for="categoryId" class="col-1 fw-bold">類別*:</lable>
       <div class="col-2"><select name="categoryId" id="categoryId" class="form-control">
-          <option value="1" {{#if (eq record.categoryId 1)}}selected{{/if}}>家居物業</option>
-          <option value="2" {{#if (eq record.categoryId 2)}}selected{{/if}}>交通出行</option>
-          <option value="3" {{#if (eq record.categoryId 3)}}selected{{/if}}>休閒娛樂</option>
-          <option value="4" {{#if (eq record.categoryId 4)}}selected{{/if}}>餐飲食品</option>
-          <option value="5" {{#if (eq record.categoryId 5)}}selected{{/if}}>其他</option>
+          <option value="{{categoryMap.家居物業}}" {{#if (eq record.categoryId categoryMap.家居物業)}}selected{{/if}}>家居物業</option>
+          <option value="{{categoryMap.交通出行}}" {{#if (eq record.categoryId categoryMap.交通出行)}}selected{{/if}}>交通出行</option>
+          <option value="{{categoryMap.休閒娛樂}}" {{#if (eq record.categoryId categoryMap.休閒娛樂)}}selected{{/if}}>休閒娛樂</option>
+          <option value="{{categoryMap.餐飲食品}}" {{#if (eq record.categoryId categoryMap.餐飲食品)}}selected{{/if}}>餐飲食品</option>
+          <option value="{{categoryMap.其他}}" {{#if (eq record.categoryId categoryMap.其他)}}selected{{/if}}>其他</option>
         </select></div>
     </div>
 

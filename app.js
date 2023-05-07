@@ -32,31 +32,16 @@ app.engine('hbs', exphbs({
 
       return `${year}/${month}/${day}`
     },
-    getImg: function(id) {
-      const CATEGORY = {
-        家居物業: "fa-solid fa-house",
-        交通出行: "fa-solid fa-van-shuttle",
-        休閒娛樂: "fa-solid fa-face-grin-beam",
-        餐飲食品: "fa-solid fa-utensils",
-        其他: "fa-solid fa-pen"
-      }
-      if (id === 1) {
-        return CATEGORY.家居物業
-      } else if (id === 2) {
-        return CATEGORY.交通出行
-      } else if (id === 3) {
-        return CATEGORY.休閒娛樂
-      } else if (id === 4) {
-        return CATEGORY.餐飲食品
-      } else if (id === 5) {
-        return CATEGORY.其他
-      }
-    },
     cutDate: function(date) {
       if (!date) return ""
       return date.toISOString().substring(0, 10)
     },
-    eq: (a, b) => a === b
+    eq: function (a, b) {
+      return a == b
+    },
+    getImg: function(obj, categoryId){
+      return obj[categoryId]
+    }
   }
 }))
 

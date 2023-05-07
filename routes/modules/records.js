@@ -1,12 +1,21 @@
 const express = require('express')
 const router = express.Router()
-
+const Category = require('../../models/category')
 const Record = require('../../models/record')
 
 
 //create
 router.get('/new', (req, res) => {
-  res.render('new')
+  const categoryMap = {}
+  Category.find()
+    .lean()
+    .then(categorys => {
+      categorys.forEach(category => {
+        categoryMap[category.name] = category._id
+      })
+    })
+    .then(() => res.render('new', { categoryMap }))
+    .catch(error => console.log(error))
 })
 
 router.post('/', (req, res) => {
@@ -18,14 +27,23 @@ router.post('/', (req, res) => {
     .catch(error => console.log(error))
 })
 
-
 //update
 router.get('/:id/edit', (req, res) => {
   const userId = req.user._id
   const _id = req.params.id
+  const categoryMap = {}
   return Record.findOne({ _id, userId })
     .lean()
-    .then(record => res.render('edit', { record }))
+    .then(record => {
+      Category.find()
+      .lean()
+      .then(categorys => {
+        categorys.forEach(category => {
+          categoryMap[category.name] = category._id
+        })
+      })
+      .then(() => res.render('edit', { record, categoryMap }))
+    })
     .catch(error => console.log(error))
 })
 

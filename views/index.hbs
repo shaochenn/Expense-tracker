@@ -7,11 +7,11 @@
           類別
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/search/categoryId/1">家居物業</a></li>
-          <li><a class="dropdown-item" href="/search/categoryId/2">交通出行</a></li>
-          <li><a class="dropdown-item" href="/search/categoryId/3">休閒娛樂</a></li>
-          <li><a class="dropdown-item" href="/search/categoryId/4">餐飲食品</a></li>
-          <li><a class="dropdown-item" href="/search/categoryId/5">其他</a></li>
+          <li><a class="dropdown-item" href="/search/categoryId/{{categoryNameToId.家居物業}}">家居物業</a></li>
+          <li><a class="dropdown-item" href="/search/categoryId/{{categoryNameToId.交通出行}}">交通出行</a></li>
+          <li><a class="dropdown-item" href="/search/categoryId/{{categoryNameToId.休閒娛樂}}">休閒娛樂</a></li>
+          <li><a class="dropdown-item" href="/search/categoryId/{{categoryNameToId.餐飲食品}}">餐飲食品</a></li>
+          <li><a class="dropdown-item" href="/search/categoryId/{{categoryNameToId.其他}}">其他</a></li>
         </ul>
       </div>
 
@@ -23,12 +23,11 @@
       總金額:<span class="fs-1 text-primary">{{totalAmount}}</span>
     </div>
   </div>
-
   {{#each records}}
   
   <div class="row d-flex justify-content-center align-items-center mt-5">
     <div class="col col-1">
-      <i class="{{getImg this.categoryId}}"></i>
+      <i class="{{getImg ../categoryMap this.categoryId}}"></i>
     </div>
 
     <div class="col col-1">
@@ -36,9 +35,9 @@
       <div class="row">{{ fomattedDate this.date }}</div>
     </div>
     <div class="col col-1">{{ this.amount }}元</div>
-    <div class="col col-1"><a href="./records/{{ this._id }}/edit">修改</a></div>
+    <div class="col col-1"><a href="/records/{{ this._id }}/edit">修改</a></div>
     <div class="col col-1">
-      <form action="./records/{{ this._id }}?_method=DELETE" method="POST">
+      <form action="/records/{{ this._id }}?_method=DELETE" method="POST">
         <button type="submit">刪除</button>
       </form>
     </div>
