@@ -1,8 +1,6 @@
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 
-const passport = require('passport')
-const LocalStrategy = require('passport-local').Strategy
 const User = require('../models/user')
 module.exports = app => {
 
@@ -22,7 +20,7 @@ module.exports = app => {
       })
       .catch(err => done(err, false))
   }))
-  
+
   passport.serializeUser((user, done) => {
     done(null, user.id)
   })
