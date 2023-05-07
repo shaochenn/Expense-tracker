@@ -20,12 +20,20 @@ const categoryList = [{
 ]
 
 db.once('open', () => {
-  Promise.all([
-    Category.create(categoryList)
-  ])
-  .then(() => {
-    console.log('category seeds done')
-    process.exit()
-  })
-  .catch(error => console.log(error))
+  Category.find()
+    .then(records => {
+      return Promise.all(Array.from(records, (record) => {
+        record.remove()
+      }))
+    })
+    .then(() => {
+      return Promise.all([
+        Category.create(categoryList)
+      ])
+      .then(() => {
+        console.log('category seeds done')
+        process.exit()
+      })
+      .catch(error => console.log(error))
+    })
 })
