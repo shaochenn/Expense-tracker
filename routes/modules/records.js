@@ -3,7 +3,6 @@ const router = express.Router()
 const Category = require('../../models/category')
 const Record = require('../../models/record')
 
-
 //create
 router.get('/new', (req, res) => {
   const categoryMap = {}

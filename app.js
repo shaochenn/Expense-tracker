@@ -18,7 +18,6 @@ const app = express()
 
 const port = process.env.PORT
 
-
 app.engine('hbs', exphbs({
   defaultLayout: 'main',
   extname: '.hbs',
@@ -65,7 +64,6 @@ app.use((req, res, next) => {
   next()
 })
 app.use(routes)
-
 
 app.listen(port, () => {
   console.log('Express is running on http://localhost:port')
