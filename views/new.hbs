@@ -10,18 +10,18 @@
   <form action="/records" method="POST">
     <div class="row justify-content-center mb-3">
       <lable for="name" class="col-1 fw-bold">名稱*:</lable>
-      <div class="col-2"><input type="text" id="name" name="name" class="form-control"></div>
+      <div class="col-2"><input type="text" id="name" name="name" class="form-control" required="required"></div>
     </div>
 
     <div class="row justify-content-center mb-3">
       <lable for="date" class="col-1 fw-bold">日期*:</lable>
-      <div class="col-2"><input type="date" id="date" name="date" class="form-control"></div>
+      <div class="col-2"><input type="date" id="date" name="date" class="form-control" required="required"></div>
     </div>
 
     <div class="row justify-content-center mb-3">
       <lable for="categoryId" class="col-1 fw-bold">類別*:</lable>
-      <div class="col-2"><select name="categoryId" id="categoryId" class="form-control">
-        <option value="" selected disabled>select</option>
+      <div class="col-2"><select name="categoryId" id="categoryId" class="form-control required">
+        <option value="" disabled selected hidden>select</option>
         <option value="1">家居物業</option>
         <option value="2">交通出行</option>
         <option value="3">休閒娛樂</option>
@@ -32,7 +32,7 @@
 
     <div class="row justify-content-center mb-3">
       <lable for="amount" class="col-1 fw-bold">金額*:</lable>
-      <div class="col-2"><input type="text" id="amount" name="amount" class="form-control"></div>
+      <div class="col-2"><input type="text" id="amount" name="amount" class="form-control" required="required"></div>
     </div>
 
     <div class="row">
