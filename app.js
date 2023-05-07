@@ -16,7 +16,7 @@ if(process.env.NODE_ENV !== 'production'){
 
 const app = express()
 
-const port = process.env.PORT
+const PORT = process.env.PORT || 3000
 
 app.engine('hbs', exphbs({
   defaultLayout: 'main',
@@ -65,6 +65,6 @@ app.use((req, res, next) => {
 })
 app.use(routes)
 
-app.listen(port, () => {
-  console.log('Express is running on http://localhost:port')
+app.listen(PORT, () => {
+  console.log(`App is running on http://localhost:${PORT}`)
 })
