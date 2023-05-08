@@ -11,19 +11,6 @@
 
 ## Environment SetUp - 環境建置
 
-- Node.js
-- "bcryptjs": "^2.4.3",
-- "body-parser": "^1.20.2",
-- "connect-flash": "^0.1.1",
-- "dotenv": "^16.0.3",
-- "express": "^4.18.2",
-- "express-handlebars": "^3.0.0",
-- "express-session": "^1.17.1",
-- "method-override": "^3.0.0",
-- "mongoose": "^5.13.17",
-- "passport": "^0.4.1",
-- "passport-facebook": "^3.0.0",
-- "passport-local": "^1.0.0"
 
 ## Installation And Execution - 安裝與執行步驟
 
