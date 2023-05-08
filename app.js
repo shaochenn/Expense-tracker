@@ -35,10 +35,10 @@ app.engine('hbs', exphbs({
       if (!date) return ""
       return date.toISOString().substring(0, 10)
     },
-    eq: function (a, b) {
+    eq: function(a, b) {
       return a == b
     },
-    getImg: function(obj, categoryId){
+    getImg: function(obj, categoryId) {
       return obj[categoryId]
     }
   }
